@@ -3,12 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://fileszero.github.io/hugo_qs/posts/my-first-post/</loc>
+    <lastmod>2018-11-20T11:49:46+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://fileszero.github.io/hugo_qs/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://fileszero.github.io/hugo_qs/</loc>
+    <lastmod>2018-11-20T11:49:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fileszero.github.io/hugo_qs/posts/</loc>
+    <lastmod>2018-11-20T11:49:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
