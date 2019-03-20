@@ -22,11 +22,15 @@ jobs:
               git config --global user.email $(git --no-pager show -s --format='%ae' HEAD)
               git config --global user.name $CIRCLE_USERNAME
       - run:
+          name: Pull submodules
+          command: |
+            git submodule init
+            git submodule update
+      - run:
           name: Building blog pages
           command: |
             rm -rf public
             git worktree add -B gh-pages public origin/gh-pages
-            git submodule update
             HUGO_ENV=production hugo -v --minify
       - run:
           name: Push to gh-pages
