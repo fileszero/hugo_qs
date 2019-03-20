@@ -37,7 +37,7 @@ jobs:
           command: |
             cd public
             git add --all
-            git commit -m "deploy from CI" --allow-empty
+            git commit -m "deploy from CI bulid $CIRCLE_BUILD_NUM" --allow-empty
             cd ..
             git push origin gh-pages
 
