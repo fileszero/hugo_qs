@@ -1,6 +1,9 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - master
     docker:
       - image: cibuilds/hugo:latest
     working_directory: ~/hugo
@@ -16,12 +19,33 @@ jobs:
       - run:
           name: Building blog pages
           command: |
+            rm -rf public
+            git worktree add -B gh-pages public origin/gh-pages
+            git submodule update
             hugo --minify
-            git add -A
+            cd public
+            git add --all
             git commit -m "deploy from CI"
-
-
+            cd ..
+            git push origin gh-pages
 
 
 # https://t32k.me/mol/log/hugo-circleci-ghpages-2018/
 # https://dotstud.io/blog/circleci-hugo-github-pages/
+# https://gohugo.io/hosting-and-deployment/hosting-on-github/
+
+# git checkout --orphan gh-pages
+# git reset --hard
+#   >>  delete folders
+# git commit --allow-empty -m "Initializing gh-pages branch"
+# git push origin gh-pages
+# rm -rf public
+# git worktree add -B gh-pages public origin/gh-pages
+# git submodule update
+# hugo --minify
+# cd public
+# git add --all
+# git commit -m "Publishing to gh-pages"
+# cd ..
+# git push origin gh-pages
+
