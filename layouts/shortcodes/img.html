@@ -1,20 +1,20 @@
 {{/* https://gohugo.io/content-management/image-processing/#image-processing-examples */}}
-{{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
-{{ $command := .Get 1 }}
-{{ $options := .Get 2 }}
-{{ if eq $command "Fit"}}
+{{ $original := .Page.Resources.GetMatch (.Get "src") }}
+{{ $command := default "Resize" (lower (.Get "cmd")) }}
+{{ $options := default "256x" (lower (.Get "size")) }}
+{{ if eq $command "fit"}}
 {{ .Scratch.Set "image" ($original.Fit $options) }}
-{{ else if eq $command "Resize"}}
+{{ else if eq $command "resize"}}
 {{ .Scratch.Set "image" ($original.Resize $options) }}
-{{ else if eq $command "Fill"}}
+{{ else if eq $command "fill"}}
 {{ .Scratch.Set "image" ($original.Fill $options) }}
 {{ else }}
 {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
 {{ end }}
 {{ $image := .Scratch.Get "image" }}
-<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+<figure style="width: {{ add $image.Width 3 }}px; padding: 3px ; margin: 2rem 0; background-color: #cccc">
     <img style="max-width: 100%; height: auto;" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}"
-        height="{{ $image.Height }}">
+        height="{{ $image.Height }}" data-original="{{ $original.RelPermalink }}">
     <figcaption>
         <small>
             {{ with .Inner }}

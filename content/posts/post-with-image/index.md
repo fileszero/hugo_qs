@@ -8,5 +8,12 @@ draft: true
 ```
 hugo new posts/post-with-image/index.md
 ```
+layouts\shortcodes\img.htmlを追加。こんな感じで使います。
+```
+{{</* img src="ai_computer_sousa_robot.png" cmd="Resize" size="10x" /*/>}}
+```
 
-{{< img ai_computer_sousa_robot Resize "300x" />}}
+{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="10x" />}}
+{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="50x" />}}
+{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="100x" />}}
+{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="240x" />}}
