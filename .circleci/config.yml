@@ -12,9 +12,15 @@ jobs:
           name: Hugo version
           command: echo "$(hugo version)"
       - checkout
+      - run: pwd
       - run:
           name: Building blog pages
-          command: hugo --minify
+          command: |
+            hugo --minify
+            git add -A
+            git commit -m "deploy from CI"
+
+
 
 
 # https://t32k.me/mol/log/hugo-circleci-ghpages-2018/
