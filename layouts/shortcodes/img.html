@@ -2,6 +2,7 @@
 {{ $original := .Page.Resources.GetMatch (.Get "src") }}
 {{ $command := default "Resize" (lower (.Get "cmd")) }}
 {{ $options := default "256x" (lower (.Get "size")) }}
+{{ $title := default $original.Name (.Get "title") }}
 {{ if eq $command "fit"}}
 {{ .Scratch.Set "image" ($original.Fit $options) }}
 {{ else if eq $command "resize"}}
@@ -20,7 +21,7 @@
             {{ with .Inner }}
             {{ . }}
             {{ else }}
-            .{{ $command }} "{{ $options }}"
+            {{ $title }}
             {{ end }}
         </small>
     </figcaption>

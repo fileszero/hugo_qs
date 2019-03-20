@@ -10,10 +10,10 @@ hugo new posts/post-with-image/index.md
 ```
 layouts\shortcodes\img.htmlを追加。こんな感じで使います。
 ```
-{{</* img src="ai_computer_sousa_robot.png" cmd="Resize" size="10x" /*/>}}
+{{</* img src="ai_computer_sousa_robot.png" cmd="Resize" size="10x" title="ろぼ" /*/>}}
 ```
 
-{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="10x" />}}
-{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="50x" />}}
-{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="100x" />}}
-{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="240x" />}}
+{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="10x" title="ろ"/>}}
+{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="50x"  title="ろぼ"/>}}
+{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="100x" title="ろぼっ"/>}}
+{{< img src="ai_computer_sousa_robot.png" cmd="Resize" size="240x" title="ろぼっと"/>}}
