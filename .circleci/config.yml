@@ -28,9 +28,12 @@ jobs:
             git worktree add -B gh-pages public origin/gh-pages
             git submodule update
             hugo --minify
+      - run:
+          name: Push to gh-pages
+          command: |
             cd public
             git add --all
-            git commit -m "deploy from CI"
+            git commit -m "deploy from CI" --allow-empty
             cd ..
             git push origin gh-pages
 
