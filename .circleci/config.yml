@@ -27,7 +27,7 @@ jobs:
             rm -rf public
             git worktree add -B gh-pages public origin/gh-pages
             git submodule update
-            hugo --minify
+            HUGO_ENV=production hugo -v --minify
       - run:
           name: Push to gh-pages
           command: |
