@@ -8,6 +8,9 @@ jobs:
       - image: cibuilds/hugo:latest
     working_directory: ~/hugo
     steps:
+      - add_ssh_keys:
+        fingerprints:
+          - $GIT_WRITE_FINGERPRINT
       - run:
           name: Update enviroment
           command: apk update && apk add git
@@ -57,3 +60,12 @@ jobs:
 # cd ..
 # git push origin gh-pages
 
+
+# create deploy-key (write) on github (NO passphrase)
+#    see https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key
+# set ssh key on CircleCI
+# Project Settings -> SSH Permissions -> Add SSH Key
+#   hostname = github.com
+# Environment Variables ->Add Variable
+#    Name: GIT_WRITE_FINGERPRINT
+#    Valu: copy filger print from github
