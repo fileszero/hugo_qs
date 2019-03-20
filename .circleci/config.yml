@@ -9,8 +9,8 @@ jobs:
     working_directory: ~/hugo
     steps:
       - add_ssh_keys:
-        fingerprints:
-          - $GIT_WRITE_FINGERPRINT
+          fingerprints:
+            - $GIT_WRITE_FINGERPRINT
       - run:
           name: Update enviroment
           command: apk update && apk add git
