@@ -2,5 +2,5 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "My New Hugo Site"
-theme = "ananke"
+theme = "hugo_theme_robust"
 # publishDir = "docs"
