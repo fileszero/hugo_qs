@@ -17,6 +17,11 @@ jobs:
       - checkout
       - run: pwd
       - run:
+          name: Git settings
+          command: |
+              git config --global user.email $(git --no-pager show -s --format='%ae' HEAD)
+              git config --global user.name $CIRCLE_USERNAME
+      - run:
           name: Building blog pages
           command: |
             rm -rf public
