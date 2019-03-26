@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 
 echo "migrate Wordpress to HUGO"
 
@@ -45,7 +45,6 @@ for file in `find ${hugoExport%/}/posts -maxdepth 1 -type f -name "*.md"`; do
     done
     # replace image link
     #sed -e 's/^.*a href="[^"]+\/wp-content\/uploads\/\".*alt=\"([^\"]*)\".*<\/a>/$imgCode/g" $hugoExport/posts/2018-11-12-jenkins-aspnet-mvc-cicd.md
-    break
 done
 imgSrc="www.kimurak.net\/wordpress\/wp-content\/uploads\/"
 imgCode="{{< lightbox src=\"\/images\/\1\" caption=\"\3\" >}}"
@@ -53,3 +52,5 @@ imgCode="{{< lightbox src=\"\/images\/\1\" caption=\"\3\" >}}"
 # sed -E "s/<a href=\"[^\"]*https?:\/\/$imgSrc([^\"]+\.(jpg|png))\".*alt=\"([^\"]*)\".*<\/a>/$imgCode/g" $hugoExport/posts/2018-11-12-jenkins-aspnet-mvc-cicd.md
 
 #sed -e 's/a/b/g' $hugoExport/posts/2019-03-19-redmine-ticket-command.md
+
+# how support embed gist ? https://github.com/SchumacherFM/wordpress-to-hugo-exporter/blob/master/includes/markdownify/Converter.php
