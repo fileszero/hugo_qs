@@ -6,4 +6,4 @@ draft: false
 
 ## luminous
 
-{{< luminous src="ai_computer_sousa_robot.png" cmd="Resize" size="240x" title="ゝ㝼㝣㝨" >}}
+{{< luminous src="ai_computer_sousa_robot.png" cmd="Resize" size="240x" title="test" >}}
