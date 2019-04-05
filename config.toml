@@ -5,8 +5,12 @@ title = "My New Hugo Site"
 theme = "hugo_theme_robust"
 # publishDir = "docs"
 
+## Syntax highlight
 pygmentscodefences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsStyle = "monokai"
 pygmentsUseClasses = true
 pygmentsoptions = "linenos=table"
+
+## Google Analytics
+#googleAnalytics = "UA-000000000-0"
