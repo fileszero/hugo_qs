@@ -14,3 +14,6 @@ pygmentsoptions = "linenos=table"
 
 ## Google Analytics
 #googleAnalytics = "UA-000000000-0"
+
+[permalinks]
+  posts = "/:year-:month-:day-:slug/"
